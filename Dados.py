@@ -33,7 +33,8 @@ df2 = pd.DataFrame(table_rows2)
 ########################################################################
 df3 = pd.DataFrame(table_rows3)
 for y in df3.loc[2]:
-    df3[2] = df3[2].replace([1,2,3,4,5,6,7],["Leid","Castilho","Loja","Site","Samuel", "Chico", "Zefs"])
+    df3[2] = df3[2].replace([1,2,3,4,5,6,7,12],["Leid","Castilho","Loja","Site","Samuel", "Chico", "Zefs",
+                                                "Michele"])
 ########################################################################
 df4 = df3.drop(columns=3)
 df4 = df4.drop(columns=1)
