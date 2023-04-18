@@ -13,7 +13,8 @@ TABLE_NAME3 = 'PEDIDOS_VENDAS'
 SELECT1 = 'select PVI_NUMERO, PVI_PRO_CODIGO, PVI_ITEM, PVI_QUANTIDADE, PVI_UNITARIO from %s ' \
           % (TABLE_NAME1)
 SELECT2 = 'select  PRO_RESUMO, PRO_CODIGO, PRO_NIVEL3 from %s' % (TABLE_NAME2)
-SELECT3 = 'select PDV_NUMERO, PDV_DATA, PDV_REP_CODIGO, PDV_VALORPRODUTOS, PDV_PSI_CODIGO from %s' % (TABLE_NAME3)
+SELECT3 = 'select PDV_NUMERO, PDV_DATA, PDV_REP_CODIGO, PDV_VALORPRODUTOS, PDV_PSI_CODIGO, PDV_TIPOPAGAMENTO' \
+          ' from %s' % (TABLE_NAME3)
 ########################################################################
 con = fdb.connect(dsn=dst_path, user='SYSDBA', password='masterkey', charset='UTF8')
 cur = con.cursor()
@@ -34,6 +35,7 @@ df2 = pd.DataFrame(table_rows2)
 df3 = pd.DataFrame(table_rows3)
 
 df3 = df3[df3[4] != "CC"]
+df3 = df3[df3[5] != "G"]
 
 for y in df3.loc[2]:
     df3[2] = df3[2].replace([1,2,3,4,5,6,7,12],["Leid","Castilho","Loja","Site","Samuel", "Chico", "Zefs",
