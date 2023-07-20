@@ -39,8 +39,8 @@ df3 = df3[df3[5] != "G"]
 df3 = df3.drop(columns=5)
 
 for y in df3.loc[2]:
-    df3[2] = df3[2].replace([1,2,3,4,5,6,7,12],["Leid","Castilho","Loja","Site","Samuel", "Chico", "Zefs",
-                                                "Michele"])
+    df3[2] = df3[2].replace([1,2,3,4,5,6,7,12,13,14,15],["Leid","Castilho","Loja","Site","Samuel", "Chico", "Zefs",
+                                                "Michele","Thais","Isabelly","Alicia"])
 ########################################################################
 df4 = df3.drop(columns=3)
 df4 = df4.drop(columns=4)
